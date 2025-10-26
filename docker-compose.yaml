@@ -1,0 +1,21 @@
+version: '3.9'
+services:
+  tracking-frontend:
+    build: .
+    image: tracking-system-image:v1
+    container_name: tracking-webapp
+    ports:
+      - "3007:3000"
+    environment:
+      - MONGODB_URI=mongodb://tracking-mongodb:27017/logistics-tracker
+    depends_on:
+      - tracking-backend
+  
+  tracking-backend:
+    image: mongo:latest
+    container_name: tracking-mongodb
+    ports:
+      - "27019:27017"
+    volumes:
+      - ./data:data/db
+    
