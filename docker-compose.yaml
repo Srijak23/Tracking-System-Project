@@ -15,7 +15,7 @@ services:
     image: mongo:latest
     container_name: tracking-mongodb
     ports:
-      - "27019:27017"
+      - "27020:27017"
     volumes:
       - ./data:/data/db
 
