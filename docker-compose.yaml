@@ -17,5 +17,5 @@ services:
     ports:
       - "27019:27017"
     volumes:
-      - ./data:data/db
-    
+      - ./data:/data/db
+
